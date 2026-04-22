@@ -14,7 +14,7 @@ y = data.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Model (Hyperparameter: C value)
-model = LogisticRegression(C=1.0, max_iter=200)
+model = LogisticRegression(C=0.5, max_iter=200)
 
 # Train model
 model.fit(X_train, y_train)
@@ -27,6 +27,6 @@ print(f"Accuracy: {accuracy}")
 os.makedirs("models", exist_ok=True)
 
 # Save model
-joblib.dump(model, "models/model_v1.pkl")
+joblib.dump(model, "models/model_v2.pkl")
 
 print("Model saved as model_v1.pkl")
